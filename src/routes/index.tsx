@@ -14,7 +14,15 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const Spacer = () => <div aria-hidden className="w-full bg-white h-3 md:h-4" />;
+const Spacer = () => (
+  <div
+    aria-hidden
+    className="w-full h-2 md:h-3"
+    style={{
+      background: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,1) 100%)",
+    }}
+  />
+);
 
 function Home() {
   return (
