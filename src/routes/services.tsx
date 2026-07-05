@@ -36,7 +36,7 @@ function ServicesPage() {
         <section
           key={i}
           className="relative w-full"
-          style={i < images.length - 1 ? { maskImage: "linear-gradient(to bottom, black 92%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 92%, transparent 100%)", marginBottom: "-2.5rem" } : undefined}
+          style={i < images.length - 1 ? { maskImage: "linear-gradient(to bottom, black 96%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 96%, transparent 100%)", marginBottom: "-1rem" } : undefined}
         >
           <img
             src={img.url}
