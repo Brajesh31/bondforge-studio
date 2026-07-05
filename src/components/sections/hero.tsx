@@ -2,7 +2,7 @@ import ref from "@/assets/ref-hero.png.asset.json";
 
 export function Hero() {
   return (
-    <section id="top" className="relative w-full bg-white">
+    <section id="top" className="relative w-full bg-white pt-24 md:pt-28">
       <img
         src={ref.url}
         alt="Content that Captures, Strategies that Drive Growth"

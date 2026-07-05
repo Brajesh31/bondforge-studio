@@ -2,40 +2,17 @@ import { ArrowUpRight, Mail, Instagram, Youtube, Linkedin, Twitter } from "lucid
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./logo";
 import { footerGroups } from "@/data/site-pages";
+import ref from "@/assets/ref-cta.png.asset.json";
 
 export function CTA() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-radial-glow opacity-70" />
-      <div className="relative mx-auto max-w-5xl px-4 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
-          Let's build together
-        </span>
-        <h2 className="mx-auto mt-6 max-w-3xl font-display text-5xl leading-[1.02] tracking-tight text-foreground md:text-7xl">
-          Ready to turn content into{" "}
-          <span className="text-gradient italic">real growth?</span>
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground">
-          Book a free 30-minute consultation. We'll audit your content, identify
-          growth opportunities and outline a plan — no strings attached.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            to="/free-consultation"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-transform hover:scale-[1.02]"
-          >
-            Book a Free Consultation
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
-          <a
-            href="mailto:hello@thesocialbond.co"
-            className="inline-flex items-center gap-2 rounded-full border border-hairline bg-surface/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur hover:bg-surface-elevated"
-          >
-            <Mail className="h-4 w-4" />
-            hello@thesocialbond.co
-          </a>
-        </div>
-      </div>
+    <section id="contact" className="relative w-full bg-black">
+      <img
+        src={ref.url}
+        alt="You create. We elevate. Together."
+        className="block w-full h-auto"
+        loading="lazy"
+      />
     </section>
   );
 }
