@@ -231,3 +231,4 @@ function FaqsPage() {
     </main>
   );
 }
+export default FaqsPage;

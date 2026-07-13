@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 // Importing sections directly from your route-specific folder
-import { Hero } from "@/routes/about/hero";
-import { Story } from "@/routes/about/story";
-import { Principal } from "@/routes/about/principal";
-import { Team } from "@/routes/about/team";
-import { Capabilities } from "@/routes/about/capabilities";
-import { NumberSection } from "@/routes/about/number";
-import { ClientSection } from "@/routes/about/client";
-import { Process } from "@/routes/about/process";
-import CTASection from "@/routes/about/cta";
+import { Hero } from "@/pages/about/hero";
+import { Story } from "@/pages/about/story";
+import { Principal } from "@/pages/about/principal";
+import { Team } from "@/pages/about/team";
+import { Capabilities } from "@/pages/about/capabilities";
+import { NumberSection } from "@/pages/about/number";
+import { ClientSection } from "@/pages/about/client";
+import { Process } from "@/pages/about/process";
+import CTASection from "@/pages/about/cta";
 
 
 
@@ -37,3 +37,4 @@ function ContactPage() {
     </main>
   );
 }
+export default ContactPage;

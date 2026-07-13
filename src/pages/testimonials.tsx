@@ -266,3 +266,4 @@ export const Route = createFileRoute("/testimonials")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

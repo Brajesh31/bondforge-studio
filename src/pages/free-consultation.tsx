@@ -266,3 +266,4 @@ export const Route = createFileRoute("/free-consultation")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

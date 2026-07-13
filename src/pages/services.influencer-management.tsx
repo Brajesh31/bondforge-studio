@@ -266,3 +266,4 @@ export const Route = createFileRoute("/services/influencer-management")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

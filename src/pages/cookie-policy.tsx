@@ -120,3 +120,4 @@ function CookiePolicyPage() {
     </main>
   );
 }
+export default CookiePolicyPage;

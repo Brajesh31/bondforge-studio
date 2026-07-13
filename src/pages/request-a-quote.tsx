@@ -266,3 +266,4 @@ export const Route = createFileRoute("/request-a-quote")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

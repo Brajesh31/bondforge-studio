@@ -266,3 +266,4 @@ export const Route = createFileRoute("/services/video-editing")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

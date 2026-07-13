@@ -266,3 +266,4 @@ export const Route = createFileRoute("/services/digital-marketing")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

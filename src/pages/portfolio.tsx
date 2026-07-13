@@ -266,3 +266,4 @@ export const Route = createFileRoute("/portfolio")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

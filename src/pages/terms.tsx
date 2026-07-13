@@ -115,3 +115,4 @@ function TermsPage() {
     </main>
   );
 }
+export default TermsPage;
