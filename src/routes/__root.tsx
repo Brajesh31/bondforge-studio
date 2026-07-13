@@ -19,9 +19,7 @@ function NotFoundComponent() {
     <div className="flex min-h-dvh items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-8xl font-normal text-gradient">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">
-          This page drifted off-brief
-        </h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">This page drifted off-brief</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
@@ -76,77 +74,117 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
-  {
-    head: () => ({
-      meta: [
-        { charSet: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        {
-          title:
-            "Social Bond — Content, Strategy & Growth Partner for Modern Brands",
-        },
-        {
-          name: "description",
-          content:
-            "Social Bond is a creative growth partner helping creators, startups and brands scale through cinematic video, social strategy and performance content.",
-        },
-        { name: "author", content: "Social Bond" },
-        { name: "theme-color", content: "#0a0a14" },
-        {
-          property: "og:title",
-          content: "Social Bond — Content that Captures. Strategies that Grow.",
-        },
-        {
-          property: "og:description",
-          content:
-            "A creative growth partner for creators, startups and brands. Cinematic video, social strategy and performance content — under one roof.",
-        },
-        { property: "og:type", content: "website" },
-        { property: "og:site_name", content: "Social Bond" },
-        { name: "twitter:card", content: "summary_large_image" },
-        {
-          name: "twitter:title",
-          content: "Social Bond — Content, Strategy & Growth Partner",
-        },
-        {
-          name: "twitter:description",
-          content:
-            "Cinematic video, social strategy and performance content for creators, startups and brands.",
-        },
-      ],
-      links: [
-        { rel: "stylesheet", href: appCss },
-        { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossOrigin: "anonymous",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap",
-        },
-      ],
-    }),
-    shellComponent: RootShell,
-    component: RootComponent,
-    notFoundComponent: NotFoundComponent,
-    errorComponent: ErrorComponent,
-  },
-);
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        title: "Social Bond — Content, Strategy & Growth Partner for Modern Brands",
+      },
+      {
+        name: "description",
+        content:
+          "Social Bond is a creative growth partner helping creators, startups and brands scale through cinematic video, social strategy and performance content.",
+      },
+      { name: "author", content: "Social Bond" },
+      { name: "theme-color", content: "#0a0a14" },
+      {
+        property: "og:title",
+        content: "Social Bond — Content that Captures. Strategies that Grow.",
+      },
+      {
+        property: "og:description",
+        content:
+          "A creative growth partner for creators, startups and brands. Cinematic video, social strategy and performance content — under one roof.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Social Bond" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Social Bond — Content, Strategy & Growth Partner",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Cinematic video, social strategy and performance content for creators, startups and brands.",
+      },
+    ],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      // Note: Favicon is handled dynamically in the RootShell script below
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap",
+      },
+    ],
+  }),
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: ErrorComponent,
+});
 
 function RootShell({ children }: { children: ReactNode }) {
+  // We removed `className="dark"` from <html> so the script below can determine the correct theme instantly
   return (
-    <html lang="en" className="dark">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
+    <html lang="en">
+    <head>
+      <HeadContent />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+                  
+                  // Instantly apply dark mode if needed to prevent flashing
+                  if (isDark) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+
+                  // Dynamically inject the correct Favicon based on theme
+                  var link = document.createElement('link');
+                  link.rel = 'icon';
+                  link.type = 'image/x-icon';
+                  link.id = 'dynamic-favicon';
+                  link.href = isDark ? '/favicon.ico' : '/favicon2.ico';
+                  document.head.appendChild(link);
+
+                  // Set up an observer to watch for theme toggles triggered by NavBar
+                  var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                      if (mutation.attributeName === 'class') {
+                        var isNowDark = document.documentElement.classList.contains('dark');
+                        var favicon = document.getElementById('dynamic-favicon');
+                        if (favicon) {
+                          favicon.href = isNowDark ? '/favicon.ico' : '/favicon2.ico';
+                        }
+                      }
+                    });
+                  });
+                  observer.observe(document.documentElement, { attributes: true });
+                } catch (e) {}
+              })();
+            `,
+        }}
+      />
+    </head>
+    <body>
+    {children}
+    <Scripts />
+    </body>
     </html>
   );
 }
