@@ -1,11 +1,22 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+import path from "node:path";
 
 export default defineConfig({
-  tanstackStart: {
-    // Setting this to false or removing the server config
-    // forces Vite to output static HTML files.
-    server: {
-      preset: "static"
+  plugins: [react(), tsconfigPaths(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+      "@tanstack/react-router": path.resolve(__dirname, "src/lib/router-shim.tsx"),
     },
+  },
+  server: {
+    host: true,
+    port: 8080,
+  },
+  build: {
+    outDir: "dist",
   },
 });

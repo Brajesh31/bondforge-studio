@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Social Bond — Content, Strategy & Growth Partner for Modern Brands</title>
+    <meta
+      name="description"
+      content="Social Bond is a creative growth partner helping creators, startups and brands scale through cinematic video, social strategy and performance content."
+    />
+    <meta name="author" content="Social Bond" />
+    <meta name="theme-color" content="#0a0a14" />
+
+    <meta property="og:title" content="Social Bond — Content that Captures. Strategies that Grow." />
+    <meta
+      property="og:description"
+      content="A creative growth partner for creators, startups and brands. Cinematic video, social strategy and performance content — under one roof."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Social Bond" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var isDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+          if (isDark) document.documentElement.classList.add("dark");
+
+          var link = document.createElement("link");
+          link.rel = "icon";
+          link.type = "image/x-icon";
+          link.id = "dynamic-favicon";
+          link.href = isDark ? "/favicon.ico" : "/favicon2.ico";
+          document.head.appendChild(link);
+
+          var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (m) {
+              if (m.attributeName === "class") {
+                var nowDark = document.documentElement.classList.contains("dark");
+                var fav = document.getElementById("dynamic-favicon");
+                if (fav) fav.href = nowDark ? "/favicon.ico" : "/favicon2.ico";
+              }
+            });
+          });
+          observer.observe(document.documentElement, { attributes: true });
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
