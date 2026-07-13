@@ -133,3 +133,4 @@ function PrivacyPolicyPage() {
     </main>
   );
 }
+export default PrivacyPolicyPage;

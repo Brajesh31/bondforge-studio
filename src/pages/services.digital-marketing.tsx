@@ -16,7 +16,7 @@ import {
 // Keep your site-pages import just for the meta tags (SEO)
 import { pages } from "@/data/site-pages";
 
-const page = pages["portfolio"];
+const page = pages["services/digital-marketing"];
 
 // --- MINI GAME DATA & LOGIC ---
 const GAME_ICONS = [Video, Monitor, Megaphone, Lightbulb, Mic, Camera];
@@ -251,7 +251,7 @@ function ComingSoonPage() {
 }
 
 // --- ROUTE REGISTRATION ---
-export const Route = createFileRoute("/portfolio")({
+export const Route = createFileRoute("/services/digital-marketing")({
   head: () => ({
     meta: [
       { title: `Coming Soon | ${page.title}` },
@@ -266,3 +266,4 @@ export const Route = createFileRoute("/portfolio")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

@@ -16,7 +16,7 @@ import {
 // Keep your site-pages import just for the meta tags (SEO)
 import { pages } from "@/data/site-pages";
 
-const page = pages["request-a-quote"];
+const page = pages["free-consultation"];
 
 // --- MINI GAME DATA & LOGIC ---
 const GAME_ICONS = [Video, Monitor, Megaphone, Lightbulb, Mic, Camera];
@@ -251,7 +251,7 @@ function ComingSoonPage() {
 }
 
 // --- ROUTE REGISTRATION ---
-export const Route = createFileRoute("/request-a-quote")({
+export const Route = createFileRoute("/free-consultation")({
   head: () => ({
     meta: [
       { title: `Coming Soon | ${page.title}` },
@@ -266,3 +266,4 @@ export const Route = createFileRoute("/request-a-quote")({
   }),
   component: ComingSoonPage,
 });
+export default ComingSoonPage;

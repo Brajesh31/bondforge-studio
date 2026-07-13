@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 // Importing sections directly from your route-specific folder
-import { Hero } from "@/routes/services/hero";
-import { Our } from "@/routes/services/our";
-import { Deliverables } from "@/routes/services/deliver";
-import { Industries } from "@/routes/services/industries";
-import { Featured } from "@/routes/services/featured";
-import { Flow } from "@/routes/services/flow";
-import { Brands } from "@/routes/services/brands";
-import { Tools } from "@/routes/services/tools";
-import { CTA } from "@/routes/services/cta";
+import { Hero } from "@/pages/services/hero";
+import { Our } from "@/pages/services/our";
+import { Deliverables } from "@/pages/services/deliver";
+import { Industries } from "@/pages/services/industries";
+import { Featured } from "@/pages/services/featured";
+import { Flow } from "@/pages/services/flow";
+import { Brands } from "@/pages/services/brands";
+import { Tools } from "@/pages/services/tools";
+import { CTA } from "@/pages/services/cta";
 
 
 
@@ -35,3 +35,4 @@ function ServicesPage() {
     </main>
   );
 }
+export default ServicesPage;
