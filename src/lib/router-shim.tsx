@@ -31,7 +31,8 @@ export function Link({
   resetScroll: _resetScroll,
   ...rest
 }: LinkProps) {
-  return <NavLink {...(rest as ComponentProps<typeof NavLink>)} to={to} />;
+  const props = { ...rest, to } as ComponentProps<typeof NavLink>;
+  return <NavLink {...props} />;
 }
 
 export const Outlet = RDOutlet;
