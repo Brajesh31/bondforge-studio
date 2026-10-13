@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository."
+title: "Social Bond website"
+type: software
+authors:
+  - family-names: Kumar
+    given-names: Brajesh
+    website: "https://github.com/brajesh31"
+repository-code: "https://github.com/Brajesh31/bondforge-studio"
+license: MIT
+keywords:
+  - React
+  - TypeScript
+  - Vite
+  - marketing website
+abstract: >-
+  A React and TypeScript single-page marketing website branded Social Bond.
+  The repository currently contains a frontend prototype with placeholder
+  lead-generation and portfolio workflows.
