@@ -1,0 +1,17 @@
+# Normalize text files in Git and generated source archives.
+* text=auto eol=lf
+
+# Improve common source and documentation diffs.
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.ts diff=typescript
+*.tsx diff=typescript
+
+# Keep static assets binary.
+*.gif binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.webp binary
