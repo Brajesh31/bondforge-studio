@@ -9,7 +9,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {".git", "node_modules", "dist"}
-LINK_RE = re.compile(r"!??\[[^\]]*\]\(([^)]+)\)|<((?:\.\.?/|/)[^>]+)>")
+LINK_RE = re.compile(r"!??\[[^\]]*\]\(([^)]+)\)")
 CODE_RE = re.compile(r"`{3}[\s\S]*?`{3}|`[^\n`]*`")
 
 def clean_target(raw: str) -> str:
