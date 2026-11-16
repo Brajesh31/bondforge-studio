@@ -15,23 +15,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  validate:
-    name: Install, lint and build
+  lint:
+    name: ESLint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-
       - name: Install locked dependencies
         run: bun install --frozen-lockfile
-
       - name: Lint
         run: bun run lint
 
-      - name: Production build
+  build:
+    name: Production build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install locked dependencies
+        run: bun install --frozen-lockfile
+      - name: Build
         run: bun run build
+
+# No test job is defined because package.json does not currently configure a test runner.
