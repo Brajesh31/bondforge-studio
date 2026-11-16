@@ -1,0 +1,53 @@
+name: "♿ Accessibility issue"
+description: Report a keyboard, screen-reader, contrast, motion or responsive accessibility barrier.
+title: "[Accessibility]: "
+labels: ["accessibility"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please avoid sharing personal or sensitive information. Describe the barrier and the affected route."
+  - type: input
+    id: route
+    attributes:
+      label: Affected route or component
+      placeholder: "/contact"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include keyboard steps or assistive technology commands where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser, OS and assistive technology
+      placeholder: "Firefox, Windows, NVDA"
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Blocks a core task
+        - Major difficulty
+        - Moderate difficulty
+        - Minor issue
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Add sanitized screenshots or recordings. Do not include private data.
+    validations:
+      required: false
