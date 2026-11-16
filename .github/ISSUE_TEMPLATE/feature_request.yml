@@ -1,0 +1,35 @@
+name: "✨ Feature request"
+description: Propose an evidence-based improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Who experiences this problem and in which journey?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed behavior
+      description: Describe the expected user-visible flow.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable conditions for completion.
+    validations:
+      required: true
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: Impact review
+      options:
+        - label: May collect or transmit visitor data
+        - label: Introduces a third-party service
+        - label: Changes routes or deployment behavior
+        - label: Has accessibility implications
