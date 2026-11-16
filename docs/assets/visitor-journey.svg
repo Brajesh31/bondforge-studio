@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">Social Bond visitor journey</title><desc id="desc">A visitor chooses to learn about the company, explore services, read FAQs, or open the contact page. The contact form currently produces only a local confirmation and sends no message.</desc>
+<defs><style>.bg{fill:#111827}.node{fill:#1f2937;stroke:#64748b;stroke-width:2}.warn{fill:#422006;stroke:#f59e0b;stroke-width:2}.t{font:600 20px Arial;fill:#f8fafc}.s{font:16px Arial;fill:#cbd5e1}.w{font:600 17px Arial;fill:#fde68a}.l{stroke:#94a3b8;stroke-width:3;fill:none;marker-end:url(#a)}</style><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#94a3b8"/></marker></defs>
+<rect width="1200" height="500" rx="26" class="bg"/><text x="50" y="55" class="t" font-size="28">VISITOR JOURNEY · CURRENT EXPERIENCE</text>
+<rect x="50" y="190" width="190" height="100" rx="16" class="node"/><text x="145" y="230" text-anchor="middle" class="t">Visitor</text><text x="145" y="260" text-anchor="middle" class="s">Opens website</text>
+<rect x="330" y="65" width="210" height="90" rx="16" class="node"/><text x="435" y="105" text-anchor="middle" class="t">Learn</text><text x="435" y="132" text-anchor="middle" class="s">Home / About</text>
+<rect x="330" y="190" width="210" height="90" rx="16" class="node"/><text x="435" y="230" text-anchor="middle" class="t">Explore</text><text x="435" y="257" text-anchor="middle" class="s">Services overview</text>
+<rect x="330" y="315" width="210" height="90" rx="16" class="node"/><text x="435" y="355" text-anchor="middle" class="t">Ask</text><text x="435" y="382" text-anchor="middle" class="s">FAQs</text>
+<rect x="665" y="190" width="210" height="100" rx="16" class="node"/><text x="770" y="230" text-anchor="middle" class="t">Contact</text><text x="770" y="260" text-anchor="middle" class="s">Client-side form</text>
+<rect x="980" y="190" width="180" height="100" rx="16" class="warn"/><text x="1070" y="228" text-anchor="middle" class="w">Local success</text><text x="1070" y="258" text-anchor="middle" class="s">No delivery</text>
+<path d="M240 240H280V110H330M280 240H330M280 240V360H330M540 110H610V240H665M540 235H665M540 360H610V240M875 240H980" class="l"/>
+<text x="50" y="465" class="s">Quote, consultation, portfolio, case-study and testimonial routes remain prototypes / under construction.</text>
+</svg>
