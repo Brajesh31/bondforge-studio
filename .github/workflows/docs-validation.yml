@@ -7,7 +7,7 @@ on:
       - "docs/**"
       - "README.md"
       - "*.md"
-      - "scripts/validate-*.py"
+      - "scripts/**"
       - ".github/workflows/docs-validation.yml"
   pull_request:
     branches: [main]
