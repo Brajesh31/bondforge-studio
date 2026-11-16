@@ -1,38 +1,48 @@
-# Accessibility Audit: <Route or component>
+# ♿ Accessibility Audit Record
 
-- **Auditor:** <name/role>
+## Audit metadata
+- **Auditor:**
 - **Date:** YYYY-MM-DD
-- **Commit:** <SHA>
-- **Browser / OS:** <details>
-- **Assistive technology:** <screen reader and version>
-- **Viewport / zoom:** <details>
+- **Commit/deployment SHA:**
+- **Route/component:**
+- **Browser / OS:**
+- **Assistive technology and version:**
+- **Viewport / zoom:**
 
-## Scope
-List pages, components, states, and journeys tested.
+## Scope and standard
+State the pages, components, states and user journeys examined. Use WCAG 2.2 AA as the engineering target for the stated scope. This record does not certify the whole product.
 
-## Checklist
+## Manual checklist
 - [ ] Document language and title are meaningful.
-- [ ] Heading hierarchy is logical.
-- [ ] Landmarks and page regions are semantic.
-- [ ] Controls have accessible names.
-- [ ] Keyboard operation is complete.
+- [ ] Heading hierarchy and landmarks are logical.
+- [ ] Controls have accessible names and correct roles.
+- [ ] Keyboard navigation and activation work.
 - [ ] Focus is visible and not obscured.
-- [ ] Dialog/menu focus is managed and restored.
-- [ ] Form labels, hints, and errors are associated.
-- [ ] Status messages are announced.
-- [ ] Informative images have alternatives.
-- [ ] Contrast meets selected target.
-- [ ] Zoom/reflow retains content.
-- [ ] Reduced motion is respected.
-- [ ] Touch target spacing is usable.
+- [ ] Focus is managed/restored for dialogs and menus.
+- [ ] Form labels, required cues and errors are associated.
+- [ ] Status messages are announced appropriately.
+- [ ] Contrast is checked in each supported theme.
+- [ ] 200% zoom and narrow viewport reflow are usable.
+- [ ] Reduced-motion preference is respected.
+- [ ] Informative images have useful alt text.
+- [ ] Touch targets and mobile navigation are usable.
 
 ## Findings
-| ID | Location | Impact | Reproduction | WCAG criterion | Recommended fix |
-| --- | --- | --- | --- | --- | --- |
-| A11Y-01 | <route/selector> | <impact> | <steps> | <criterion> | <fix> |
+| ID | Route/component | Barrier and reproduction | Severity | Evidence | Recommendation |
+|---|---|---|---|---|---|
+| A-01 | | | | | |
 
-## Result
-Pass | Fail | Partial | Blocked
+## Automated scan
+- Tool/version:
+- Date:
+- Results:
+- False positives or exclusions:
+- Manual checks still outstanding:
 
-## Evidence and retest
-Attach sanitized screenshots, screen-reader notes, axe output, issue links, and retest commit.
+## Remediation and retest
+| Finding | Fix commit | Retest date | Result |
+|---|---|---|---|
+| | | | |
+
+## Conclusion
+Summarize only the tested scope, remaining barriers and follow-up owners. Do not write "WCAG compliant" unless a qualified assessment supports that precise claim.
