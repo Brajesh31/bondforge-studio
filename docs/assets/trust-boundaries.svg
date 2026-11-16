@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+<title id="title">Social Bond trust boundaries</title><desc id="desc">The public visitor browser is separated from the static hosting boundary. The browser receives the public React bundle and static assets, stores theme preference locally, and may request third-party fonts and images. There is currently no configured application API or database.</desc>
+<defs><style>.bg{fill:#0f172a}.zone{fill:#172554;stroke:#60a5fa;stroke-width:2;stroke-dasharray:8 6}.card{fill:#1e293b;stroke:#94a3b8;stroke-width:2}.no{fill:#3f1d1d;stroke:#f87171;stroke-width:2}.t{font:600 21px Arial;fill:#f8fafc}.s{font:16px Arial;fill:#cbd5e1}.red{font:600 18px Arial;fill:#fecaca}.line{stroke:#cbd5e1;stroke-width:3;fill:none;marker-end:url(#m)}</style><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#cbd5e1"/></marker></defs>
+<rect width="1200" height="500" rx="26" class="bg"/><text x="50" y="55" class="t" font-size="28">TRUST BOUNDARIES AND DATA FLOW</text>
+<rect x="45" y="100" width="700" height="330" rx="20" class="zone"/><text x="70" y="135" class="t">Visitor-controlled browser</text>
+<rect x="90" y="180" width="210" height="95" rx="14" class="card"/><text x="195" y="218" text-anchor="middle" class="t">React SPA</text><text x="195" y="246" text-anchor="middle" class="s">Public JS / CSS</text>
+<rect x="390" y="165" width="250" height="90" rx="14" class="card"/><text x="515" y="203" text-anchor="middle" class="t">localStorage</text><text x="515" y="230" text-anchor="middle" class="s">Theme preference</text>
+<rect x="390" y="290" width="250" height="90" rx="14" class="card"/><text x="515" y="328" text-anchor="middle" class="t">Form component</text><text x="515" y="355" text-anchor="middle" class="s">Transient field state</text>
+<path d="M300 210H390M300 245H340V335H390" class="line"/>
+<rect x="820" y="100" width="330" height="140" rx="18" class="card"/><text x="985" y="145" text-anchor="middle" class="t">Third-party hosts</text><text x="985" y="178" text-anchor="middle" class="s">Fonts and remote images</text><text x="985" y="205" text-anchor="middle" class="s">Browser-originated requests</text>
+<path d="M745 210H820" class="line"/>
+<rect x="820" y="290" width="330" height="110" rx="18" class="no"/><text x="985" y="330" text-anchor="middle" class="red">No app API / database</text><text x="985" y="360" text-anchor="middle" class="s">No form delivery or persistence</text>
+<text x="50" y="470" class="s">Review hosting access logs and third-party provider processing separately; this source tree cannot verify provider-side retention.</text>
+</svg>
